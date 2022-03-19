@@ -3,7 +3,7 @@
  *   
  *   @author Jürgen Smolka
  *   @link   https://smolka.lima-city.de/
- *   
+ *   <!--  JS202202  -->
  *
  *   BASED ON:   
  *
@@ -65,14 +65,14 @@ function buildSites($pictures)
 	$ausgabe .= '<div id="navBar">' . "\n";
 	$ausgabe .= '	<div id="sectionLinks">' . "\n";
 	
-	ksort($pictures); // JS sortiert Verzeichnisse (CD1, CD2 ...)
+	ksort($pictures); // JS sortiert Verzeichnisse (CD01, CD02 ...)
 	
 	foreach($pictures as $key => $array) 
 	{
 		$ausgabe .= '		<h3>'.$pictures[$key]['name']['dir'].'</h3>' . "\n";
 		$ausgabe .= '		<ul>' . "\n";
 		
-		ksort($array); // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
+		uksort($array, 'strnatcmp'); // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
 		
 		foreach ($array as $key2 => $array1) 
 		{
@@ -238,7 +238,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
     $trackpo  = "";            // JS
     
     reset($batch);
-    ksort($batch);             // JS sortiert Verzeichnisse (CD1, CD2 ...)
+    ksort($batch);             // JS sortiert Verzeichnisse (CD01, CD02 ...)
     
     if((!empty($_POST["track"]) || $_POST["track"] == 0) && isset($_POST["Xtrack"])) {
         $tracknr = $_POST["track"];
@@ -257,7 +257,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
 		//$ausgabe .= '		<h3>'.$batch[$key]['name']['dir'].'</h3>' . "\n";
 		//$ausgabe .= '		<ul>' . "\n";
 		
-		ksort($array); // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
+		uksort($array, 'strnatcmp'); // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
 		
 		foreach ($array as $key2 => $array1) 
 		{
@@ -380,7 +380,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
     $trackpo  = "";            // JS
     
     reset($batch);
-    ksort($batch);             // JS sortiert Verzeichnisse (CD1, CD2 ...)
+    ksort($batch);             // JS sortiert Verzeichnisse (CD01, CD02 ...)
     
     if((!empty($_POST["track"]) || $_POST["track"] == 0) && isset($_POST["Xtrack"])) {
         $tracknr = $_POST["track"];
@@ -396,7 +396,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
 
     foreach($batch as $key => $array) 
     {
-        ksort($array);       // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
+        uksort($array, 'strnatcmp');  // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
 		
         foreach ($array as $key2 => $array1) 
         {
@@ -533,7 +533,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
     $trackpo  = "";            // JS
     
     reset($batch);
-    ksort($batch);             // JS sortiert Verzeichnisse (CD1, CD2 ...)
+    ksort($batch);             // JS sortiert Verzeichnisse (CD01, CD02 ...)
     
     if((!empty($_POST["track"]) || $_POST["track"] == 0) && isset($_POST["Xtrack"])) {
         $tracknr = $_POST["track"];
@@ -550,7 +550,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
 
     foreach($batch as $key => $array) 
     {
-        ksort($array);       // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
+        uksort($array, 'strnatcmp');  // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
 		
         foreach ($array as $key2 => $array1) 
         {
@@ -693,7 +693,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
     $fcount   = 0;             // JS (apiclink)
     
     reset($batch);
-    ksort($batch);             // JS sortiert Verzeichnisse (CD1, CD2 ...)
+    ksort($batch);             // JS sortiert Verzeichnisse (CD01, CD02 ...)
     
     if((!empty($_POST["track"]) || $_POST["track"] == 0) && isset($_POST["Xtrack"])) {
         $tracknr = $_POST["track"];
@@ -710,7 +710,7 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
 
     foreach($batch as $key => $array) 
     {
-        ksort($array);       // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
+        uksort($array, 'strnatcmp');  // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
 		
         foreach ($array as $key2 => $array1) 
         {
@@ -874,14 +874,14 @@ $LNK = "https://GitHub.com/ttimer/GUI-for-mID3v2/";
     $ausgabe  = "";          // JS
     
     reset($batch);
-    ksort($batch);   // JS sortiert Verzeichnisse (CD1, CD2 ...)
+    ksort($batch);   // JS sortiert Verzeichnisse (CD01, CD02 ...)
 	
 	foreach($batch as $key => $array) 
 	{
 		//$ausgabe .= '		<h3>'.$batch[$key]['name']['dir'].'</h3>' . "\n";
 		//$ausgabe .= '		<ul>' . "\n";
 		
-		ksort($array); // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
+		uksort($array, 'strnatcmp');  // JS sortiert Dateien (0101.mp3, 0102.mp3... 0404.mp3 ...)
 		
 		foreach ($array as $key2 => $array1) 
 		{
